@@ -17,17 +17,17 @@ program.parse(process.argv);
 let args = program.args;
 debugger;
 
-const getRepoId = (owner, newName) => `
+const getRepoId = (owner, name) => `
 query {
-  repository(owner: "${owner}", name: "${newName}") {
+  repository(owner: "${owner}", name: "${name}") {
     id
   }
 }
 `;
 
-const renameRepo = (id) => `
+const renameRepo = (id, newName) => `
 mutation {
-  updateRepository(input: {name: "prueba-funciona", repositoryId: ${id}}) {
+  updateRepository(input: {name: "${newName}", repositoryId: "${id}"}) {
     repository {
       name
     }
@@ -35,22 +35,33 @@ mutation {
 }
 `;
 
-let originalName = `${program.opts().name}`;
-
 let { org, repo, name } = program.opts();
-// console.log(originalName);
 
 if (!org || ! repo || !name) program.help();
 
 if (!shell.which('git')) shell.echo("git not installed")
 if (!shell.which('gh')) shell.echo("gh not installed");
 
-/*
-let r = shell.exec(`gh api -X PATCH /repos/${org}/${repo} -f name=${name}`, {silent: true});
+// console.log(getRepoId(org, repo))
 
-let rj = JSON.parse(r.stdout)
-console.log(`The repo ${org}/${repo} has been renamed to ${rj.full_name}`);
-//console.log(`The repo has been renamed to ${rj.full_name}`);
-*/
+let r = shell.exec(`gh api  graphql -f query='${getRepoId(org, repo)}' --jq '.data.repository.id'`, 
+                   {silent: true});
+if (r.code !== 0) {
+  console.error(r.stderr);
+  process.exit(r.code);
+}
+// console.log("getRepoId return = ", r.stdout);
 
-console.log(getRepoId("ULL-MFP-AET-2122", "nuevonombredelrepo"))
+const Id = r.stdout;
+
+//  stdout: '{"data":{"updateRepository":{"repository":{"name":"prueba"}}}}'
+r  = shell.exec(
+  `gh api graphql -f query='${renameRepo(Id, name)}'  --jq '.data.updateRepository.repository.name'`,
+  {silent:true})
+
+if (r.code !== 0) {
+    console.error(r.stderr);
+    process.exit(r.code);
+}
+
+console.log(r.stdout)
