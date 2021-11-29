@@ -42,7 +42,7 @@ jobs:
           continue-on-error: true   
 
         - name: probar a renombrarlo
-          run: gh repo-rename -o ${OWNER} -r ${OLDNAME} -n pruebanuevo         
+          run: gh repo-rename -o ${OWNER} -r ${OLDNAME} -n ${NEWNAME}         
 
         - name: delete repo
           run: gh api -X DELETE "/repos/${OWNER}/${NEWNAME}"           
