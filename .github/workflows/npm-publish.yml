@@ -38,10 +38,11 @@ jobs:
           run: gh extension install crguezl/gh-repo-rename  
 
         - name: create repo with user as owner
-          run: gh api /user/repos -X POST --field name=prueba           
+          run: gh api /user/repos -X POST --field name=prueba        
+          continue-on-error: true   
 
         - name: probar a renombrarlo
-          run: gh repo-rename -o ${OWNER} -r prueba -n pruebanuevo         
+          run: gh repo-rename -o crguezl -r prueba -n pruebanuevo         
 
         - name: delete repo
           run: gh api -X DELETE "/repos/${OWNER}/${NEWNAME}"           
