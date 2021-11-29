@@ -18,12 +18,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/alu0101227610/gh-repo-rename.git"
+    "url": "git+https://github.com/crguezl/gh-repo-rename.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/alu0101227610/gh-repo-rename/issues"
+    "url": "https://github.com/crguezl/gh-repo-rename/issues"
   },
-  "homepage": "https://github.com/alu0101227610/gh-repo-rename#readme"
+  "homepage": "https://github.com/crguezl/gh-repo-rename#readme"
 }
