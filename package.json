@@ -4,26 +4,26 @@
     "commander": "^8.3.0",
     "shelljs": "^0.8.4"
   },
-  "name": "gh-repo-rename-alu0101227610",
+  "name": "gh-repo-rename",
   "description": "",
   "version": "1.1.0",
-  "main": "gh-repo-rename-alu0101227610.js",
+  "main": "gh-repo-rename.js",
   "scripts": {
-    "debug": "node --inspect-brk gh-repo-rename-alu0101227610.js -o ULL-ESIT-DMSI-1920 -r prueba-funciona  -n prueba",
+    "debug": "node --inspect-brk gh-repo-rename.js -o ULL-ESIT-DMSI-1920 -r prueba-funciona  -n prueba",
     "create-prueba": "gh create-repo prueba ULL-ESIT-DMSI-1920",
     "list-prueba": "gh submodule-add -s prueba -o ULL-ESIT-DMSI-1920 -n",
-    "test": "./gh-repo-rename-alu0101227610 -o ULL-ESIT-DMSI-1920 -r prueba  -n prueba-funciona; npm run list-prueba",
-    "back": "./gh-repo-rename-alu0101227610 -o ULL-ESIT-DMSI-1920 -r prueba-funciona  -n prueba; npm run list-prueba",
-    "start": "node gh-repo-rename-alu0101227610.js"
+    "test": "./gh-repo-rename -o ULL-ESIT-DMSI-1920 -r prueba  -n prueba-funciona; npm run list-prueba",
+    "back": "./gh-repo-rename -o ULL-ESIT-DMSI-1920 -r prueba-funciona  -n prueba; npm run list-prueba",
+    "start": "node gh-repo-rename.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/alu0101227610/gh-repo-rename-alu0101227610.git"
+    "url": "git+https://github.com/alu0101227610/gh-repo-rename.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/alu0101227610/gh-repo-rename-alu0101227610/issues"
+    "url": "https://github.com/alu0101227610/gh-repo-rename/issues"
   },
-  "homepage": "https://github.com/alu0101227610/gh-repo-rename-alu0101227610#readme"
+  "homepage": "https://github.com/alu0101227610/gh-repo-rename#readme"
 }
