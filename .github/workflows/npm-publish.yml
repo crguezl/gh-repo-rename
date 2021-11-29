@@ -5,7 +5,7 @@ name: Npm publish repo-rename
 
 on:
   push:
-        branches: [master]
+        branches: [as-module]
 
 jobs:
   publish-npm:
