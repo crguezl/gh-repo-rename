@@ -52,7 +52,7 @@ if (r.code !== 0) {
 }
 // console.log("getRepoId return = ", r.stdout);
 
-const Id = r.stdout;
+const Id = r.stdout.replace(/\s+$/g,'');
 
 //  stdout: '{"data":{"updateRepository":{"repository":{"name":"prueba"}}}}'
 r  = shell.exec(
@@ -64,4 +64,4 @@ if (r.code !== 0) {
     process.exit(r.code);
 }
 
-console.log(r.stdout)
+console.log(`The repo '${org}/${repo}' has been renamed to '${r.stdout.replace(/\s+$/,'')}'`)
