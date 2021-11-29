@@ -17,8 +17,8 @@
     "test": "./gh-repo-rename -o ULL-ESIT-DMSI-1920 -r prueba  -n prueba-funciona; npm run list-prueba",
     "back": "./gh-repo-rename -o ULL-ESIT-DMSI-1920 -r prueba-funciona  -n prueba; npm run list-prueba",
     "start": "node node_modules/.bin/repo-rename",
-    "push": "git push origin  as-module; git push publico as-module",
-    "pub": "npm publish --access=public"
+    "push": "npm version minor; git push origin  as-module; git push publico as-module",
+    "pub": "npm version minor; npm publish --access=public"
   },
   "bin": {
     "repo-rename": "gh-repo-rename.js"
