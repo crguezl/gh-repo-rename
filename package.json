@@ -14,7 +14,8 @@
     "list-prueba": "gh submodule-add -s prueba -o ULL-ESIT-DMSI-1920 -n",
     "test": "./gh-repo-rename -o ULL-ESIT-DMSI-1920 -r prueba  -n prueba-funciona; npm run list-prueba",
     "back": "./gh-repo-rename -o ULL-ESIT-DMSI-1920 -r prueba-funciona  -n prueba; npm run list-prueba",
-    "start": "node gh-repo-rename.js"
+    "start": "node gh-repo-rename.js",
+    "publish":"git push origin  main; git push publico main"
   },
   "repository": {
     "type": "git",

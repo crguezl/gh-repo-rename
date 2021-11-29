@@ -1,3 +1,5 @@
+## Description
+
 Renames a repo 
 
 ## Installation
@@ -18,3 +20,7 @@ Options:
   -n, --name <name>  name
   -h, --help         display help for command
 ```
+
+## Author
+
+Casiano 
