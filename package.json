@@ -6,7 +6,7 @@
   },
   "name": "@crguezl/gh-repo-rename",
   "description": "gh extension repo rename",
-  "version": "1.1.2",
+  "version": "1.2.0",
   "main": "gh-repo-rename.js",
   "scripts": {
     "debug": "node --inspect-brk gh-repo-rename.js -o ULL-ESIT-DMSI-1920 -r prueba-funciona  -n prueba",
