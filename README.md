@@ -11,7 +11,7 @@ gh extension install crguezl/gh-repo-rename
 ## Usage
 
 ``` 
-Usage: gh-repo-rename [options]
+Usage: gh repo-rename [options]
 
 Options:
   -V, --version      output the version number
