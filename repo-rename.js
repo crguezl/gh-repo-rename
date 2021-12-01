@@ -1,3 +1,5 @@
+const shell = require('shelljs');
+
 // 1st part: get id of repo
 
 function getRepoId(owner, name) {
@@ -8,7 +10,7 @@ function getRepoId(owner, name) {
       }
     }
     `;
-    let r = shell.exec(`gh api  graphql -f query='${queryRepoId(org, repo)}' --jq '.data.repository.id'`, 
+    let r = shell.exec(`gh api  graphql -f query='${queryRepoId(owner, name)}' --jq '.data.repository.id'`, 
                        {silent: true});
     if (r.code !== 0) {
       console.error(r.stderr);
