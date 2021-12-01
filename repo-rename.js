@@ -1,7 +1,6 @@
 const shell = require('shelljs');
 
 // 1st part: get id of repo
-
 function getRepoId(owner, name) {
     const queryRepoId = (owner, name) => `
     query {
@@ -21,7 +20,6 @@ function getRepoId(owner, name) {
 }
 
 // 2nd part: rename repo
-
 function renameRepo(id, newName) {
     const queryRenameRepo = (id, newName) => `
     mutation {
