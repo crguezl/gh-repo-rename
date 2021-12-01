@@ -1,6 +1,5 @@
 {
   "dependencies": {
-    "comander": "^0.0.1-security",
     "commander": "^8.3.0",
     "shelljs": "^0.8.4"
   },
@@ -24,7 +23,7 @@
     "type": "git",
     "url": "git+https://github.com/crguezl/gh-repo-rename.git"
   },
-  "author": "",
+  "author": "Casiano",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/crguezl/gh-repo-rename/issues"
